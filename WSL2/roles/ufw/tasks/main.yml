@@ -1,0 +1,11 @@
+    - name: Outgoing allow UFW
+      ufw:
+        state: enabled
+        direction: outgoing
+        policy: allow
+
+    - name: Incoming deny UFW
+      ufw:
+        state: enabled
+        direction: incoming
+        policy: deny
