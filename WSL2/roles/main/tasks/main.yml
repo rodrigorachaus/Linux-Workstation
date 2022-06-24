@@ -111,6 +111,7 @@
         - mlocate
         - gnome-themes-extra
         - gtk2-engines-murrine
+        - emacs
       ignore_errors: true
 
     - name: Installing Gstreamer for Wsl2
