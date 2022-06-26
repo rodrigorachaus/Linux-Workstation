@@ -116,6 +116,7 @@
         - llvm-13
         - clang
         - mingw-w64
+        - exa
       when: ansible_distribution == "Ubuntu" and ansible_distribution_version == "22.04"
       ignore_errors: true
 
