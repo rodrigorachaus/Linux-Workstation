@@ -1,5 +1,4 @@
 ---
-
     - name: Installing Base Apps for Developer
       become: true
       apt:
@@ -147,7 +146,7 @@
         - exa
         - virtualbox-qt
         - virtualbox-ext-pack
-        - openssh
+        - openssh-server
       when: ansible_distribution == "Ubuntu" and ansible_distribution_version == "22.04"
       ignore_errors: true
 

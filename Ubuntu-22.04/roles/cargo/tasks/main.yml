@@ -6,11 +6,13 @@
       force: 'yes'
     tags:
       - rust
+    when: ansible_distribution == 'Ubuntu' or ansible_distribution_version == '22.04'      
 
   - name: install rust/cargo
     shell: /tmp/sh.rustup.rs -y
     tags:
       - rust
+    when: ansible_distribution == 'Ubuntu' or ansible_distribution_version == '22.04'      
 
   - name: Insert cargo source dir in .zshrc
     lineinfile:
@@ -18,4 +20,5 @@
       regexp: '# ~/.zshrc'
       insertafter: ^# export ZSH="$HOME/.oh-my-zsh"
       line: 'source $HOME/.cargo/env'
+    when: ansible_distribution == 'Ubuntu' or ansible_distribution_version == '22.04'      
 
