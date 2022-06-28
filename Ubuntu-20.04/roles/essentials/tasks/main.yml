@@ -18,6 +18,11 @@
         - libmagickwand-dev
         - software-properties-common
         - vim-gtk3
+        - tilix
+        - gnome-tweaks
+        - postgresql-14
+        - postgresql-contrib
+        - postgresql-server-dev-14                
         - curl
         - xterm
         - openjfx
@@ -51,6 +56,12 @@
         - libncurses-dev
         - openjdk-11-jdk
         - automake
+        - flameshot
+        - clamav
+        - clamtk
+        - gufw
+        - apache2
+        - mysql-server
         - autoconf
         - libreadline-dev
         - libyaml-dev
@@ -86,6 +97,22 @@
         - php-gd
         - php-sqlite3
         - php-mbstring
+        - phpmyadmin
+        - audacity
+        - blender
+        - clipit
+        - darktable
+        - inkscape
+        - gimp
+        - dia
+        - geany
+        - glade
+        - kdenlive
+        - openshot-qt
+        - wine        
+        - winetricks
+        - playonlinux
+        - preload
         - neovim        
         - fonts-hack            
         - redis-server
@@ -96,6 +123,7 @@
         - jq
         - mtr        
         - htop
+        - ctop        
         - wget
         - ncdu
         - tree
@@ -116,10 +144,13 @@
         - clang
         - mingw-w64
         - exa
+        - virtualbox-qt
+        - virtualbox-ext-pack
+        - openssh-server
       when: ansible_distribution == "Ubuntu" and ansible_distribution_version == "22.04"
       ignore_errors: true
 
-    - name: Installing Gstreamer for Wsl2
+    - name: Installing Gstreamer 
       become: true
       apt:
         name: '{{ item }}'
