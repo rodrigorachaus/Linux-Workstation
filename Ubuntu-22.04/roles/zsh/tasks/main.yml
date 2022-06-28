@@ -1,0 +1,26 @@
+- name: set default shell for non root user
+  become: yes
+  user:
+    name: ${user.normal}
+    shell: /bin/zsh
+   
+
+- name: Install oh-my-zsh for non root user
+  become: yes
+  user:
+    name: ${user.normal}
+    shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
+- name: set default shell for root user
+  become: yes
+  user:
+    name: root
+    shell: /bin/zsh
+   
+
+- name: Install oh-my-zsh for root user
+  become: yes
+  user:
+    name: root
+    shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
